@@ -129,10 +129,11 @@ decodeToken val =
 
 
 -- Recall that in `main` we specified `urlChange` for `programWithFlags`
--- In `init`, if you do not perform any Cmd, `urlChange` is not triggered
--- i.e. if you enter an URL in the address bar, if goes into `init` and does not trigger `urlChange`
+-- In `init`, if you do not perform any URL changes by `Navigation.newUrl` or `Navigation.modifyUrl` etc, `urlChange` is not triggered
+-- i.e. if you enter an URL in the address bar and hit Enter, it goes into `init` and does not trigger `urlChange`
+-- You do have the Location entered in the address bar, and you may choose to perform some actions based on its value
 --
--- In this example of mine, if the auth token is available, I forward the user to /book/20 by using `modifyUrl`
+-- In this example of mine, if the user visits `#/login` and if the auth token is available, I forward the user to `#/book/20` by using `modifyUrl`
 -- That, in turn, will trigger `urlChange` (i.e. UrlChange)
 
 
